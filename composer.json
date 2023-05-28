@@ -1,0 +1,32 @@
+{
+    "name": "lianmafutra/deploy",
+    "description": "Laravel Git FTP Deploy",
+    "type": "library",
+    "require-dev": {
+        "phpseclib/phpseclib": "^3.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+         "LianMafutra\\Deploy\\": "src"
+        }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "LianMafutra\\Deploy\\LibraryServiceProvider"
+          ]
+      }
+  },
+    "authors": [
+        {
+            "name": "Lian Mafutra",
+            "email": "lianmafutra@gmail.com"
+        }
+    ],
+    "require": {
+      "php": "^7.4|^8.0|^8.1",
+      "laravel/framework": "^8.0|^9.0|^10.0",
+      "phpseclib/phpseclib": "^3.0"
+  }
+}
