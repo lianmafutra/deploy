@@ -10,7 +10,7 @@ class LibraryServiceProvider extends ServiceProvider
 
 
    /** @var string */
-   private const CONSOLE_PATH = __DIR__ . '/../app/Console/deploy.php';
+   private const CONSOLE_PATH = __DIR__ . '/../app/Console/Commands/deploy.php';
    private const CONFIG_FILE = __DIR__ . '/../config/deploy.php';
 
    /**
@@ -75,7 +75,7 @@ class LibraryServiceProvider extends ServiceProvider
       ], 'deploy');
 
       $this->publishes([
-         self::CONSOLE_PATH => app_path('Console/deploy.php'),
+         self::CONSOLE_PATH => app_path('Console/Commands/deploy.php'),
      ], 'deploy');
 
     
