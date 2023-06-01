@@ -36,7 +36,7 @@ class LibraryServiceProvider extends ServiceProvider
      ], 'deploy');
 
      $this->publishes([
-      self::CONSOLE_PATH => app_path('DeploySetup.php'),
+      self::CONSOLE_PATH2 => app_path('DeploySetup.php'),
   ], 'deploy');
 
      
@@ -82,11 +82,11 @@ class LibraryServiceProvider extends ServiceProvider
       ], 'deploy');
 
       $this->publishes([
-         self::CONSOLE_PATH => app_path('Console/Commands/deploy.php'),
+         self::CONSOLE_PATH => app_path('Console/Commands/Deploy.php'),
      ], 'deploy');
 
      $this->publishes([
-      self::CONSOLE_PATH => app_path('Console/Commands/deploySetup.php'),
+      self::CONSOLE_PATH2 => app_path('Console/Commands/DeploySetup.php'),
   ], 'deploy');
 
 
