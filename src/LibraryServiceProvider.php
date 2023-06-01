@@ -10,7 +10,8 @@ class LibraryServiceProvider extends ServiceProvider
 
 
    /** @var string */
-   private const CONSOLE_PATH = __DIR__ . '/../app/Console/Commands/deploy.php';
+   private const CONSOLE_PATH = __DIR__ . '/../app/Console/Commands/Deploy.php';
+   private const CONSOLE_PATH2 = __DIR__ . '/../app/Console/Commands/DeploySetup.php';
    private const CONFIG_FILE = __DIR__ . '/../config/deploy.php';
 
    /**
@@ -31,8 +32,14 @@ class LibraryServiceProvider extends ServiceProvider
       }
 
       $this->publishes([
-         self::CONSOLE_PATH => app_path('deploy.php'),
+         self::CONSOLE_PATH => app_path('Deploy.php'),
      ], 'deploy');
+
+     $this->publishes([
+      self::CONSOLE_PATH => app_path('DeploySetup.php'),
+  ], 'deploy');
+
+     
 
 
      $this
@@ -78,7 +85,10 @@ class LibraryServiceProvider extends ServiceProvider
          self::CONSOLE_PATH => app_path('Console/Commands/deploy.php'),
      ], 'deploy');
 
-    
+     $this->publishes([
+      self::CONSOLE_PATH => app_path('Console/Commands/deploySetup.php'),
+  ], 'deploy');
+
 
       return $this;
    }

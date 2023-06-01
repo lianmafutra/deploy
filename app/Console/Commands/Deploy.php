@@ -7,7 +7,7 @@ use phpseclib3\Net\SSH2;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class deploy extends Command
+class Deploy extends Command
 {
    protected $signature = 'deploy';
 
