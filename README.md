@@ -43,7 +43,7 @@ php artisan deploy:setup
 
 ![Screenshot_4](https://github.com/lianmafutra/deploy/assets/15800599/08895301-46ff-4a30-8fc2-df5c015bc5c0)
 
-your done to complete configuration
+Setup is complete !
 
 ## Usage
 
