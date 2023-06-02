@@ -49,7 +49,7 @@ your done to complete configuration
 php artisan deploy
 ```
 
-2. Terminal Show Option  
+2. Terminal Show Option, Select option with type number :
 
 ![Screenshot_5](https://github.com/lianmafutra/deploy/assets/15800599/72493c7d-bc68-48c9-bf6a-6e8c1835f3c9)
 
