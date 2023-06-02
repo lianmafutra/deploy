@@ -67,10 +67,9 @@ class DeploySetup extends Command
       $git_ftp_user = exec('git config git-ftp.user ' . config('deploy.git-ftp.user'), $outputLines, $return);
       $git_ftp_pass = exec('git config git-ftp.password ' . config('deploy.git-ftp.password'), $outputLines, $return);
 
-      $this->line("Git FTP URL = " . config('deploy.git-ftp.url') . " \n");
-      $this->line("Git FTP User = " . config('deploy.git-ftp.user') . " \n");
-      $this->line("Git FTP Password = " . config('deploy.git-ftp.password') . " \n");
-
+      // $this->line("Git FTP URL = " . config('deploy.git-ftp.url') . " \n");
+      // $this->line("Git FTP User = " . config('deploy.git-ftp.user') . " \n");
+      // $this->line("Git FTP Password = " . config('deploy.git-ftp.password') . " \n");
 
       try {
          $git_ftp_cek = exec('git ftp show 2>&1', $outputLines, $return);
@@ -80,7 +79,7 @@ class DeploySetup extends Command
             $this->line("<bg=red> Git ftp not init this project");
          
          } else {
-            $this->line("Git ftp running in this project");
+            $this->line("\n<bg=green>- Git ftp running in this project</>\n");
          }
       } catch (\Throwable $th) {
          //throw $th;
