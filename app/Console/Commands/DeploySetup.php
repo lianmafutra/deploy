@@ -79,7 +79,7 @@ class DeploySetup extends Command
             $this->line("<bg=red> Git ftp not init this project");
          
          } else {
-            $this->line("\n<bg=green>- Git ftp running in this project</>\n");
+            $this->line("<bg=green>- Git FTP Configuration Successfully</>\n");
          }
       } catch (\Throwable $th) {
          //throw $th;
