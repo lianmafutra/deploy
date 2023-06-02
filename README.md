@@ -34,7 +34,7 @@ FTP_PASS="ftp_pass"
 ```
 2. Run Command : php artisan deploy:setup
 
-![Screenshot_3](https://github.com/lianmafutra/deploy/assets/15800599/000d2eb3-f7bd-4f95-9ef5-5cabbc9d9d8c)
+![Screenshot_4](https://github.com/lianmafutra/deploy/assets/15800599/08895301-46ff-4a30-8fc2-df5c015bc5c0)
 
 your done to complete configuration
 
