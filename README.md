@@ -32,7 +32,10 @@ FTP_URL="03.31.xx.xx"
 FTP_USER="ftp_user"
 FTP_PASS="ftp_pass"
 ```
-2. Run Command : php artisan deploy:setup
+2. Run Command Setup :
+```bash
+php artisan deploy:setup
+```
 
 ![Screenshot_4](https://github.com/lianmafutra/deploy/assets/15800599/08895301-46ff-4a30-8fc2-df5c015bc5c0)
 
