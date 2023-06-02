@@ -26,9 +26,9 @@ DEPLOY_HOST="103.31.xx.xx"
 DEPLOY_PORT="21"
 DEPLOY_PATH="/www/wwwroot/myproject/"
 DEPLOY_USER="root"
-DEPLOY_PASS=""
+DEPLOY_PASS="ssh_password"
 
-FTP_URL="03.31.xx.xx"
+FTP_URL="103.31.xx.xx"
 FTP_USER="ftp_user"
 FTP_PASS="ftp_pass"
 ```
