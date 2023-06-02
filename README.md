@@ -41,10 +41,15 @@ php artisan deploy:setup
 
 your done to complete configuration
 
-## Usege
+## Usage
 
-Run Command Terminal : php artisan deploy
+1. Run Command Terminal :
 
+```bash
+php artisan deploy
+```
+
+2. Show Option 
 
 ## Contributing
 
