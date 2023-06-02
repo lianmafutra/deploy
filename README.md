@@ -21,7 +21,7 @@ will be create file : app/Console/Commands/Deploy.php , app/Console/Commands/Dep
 1. open .env file and setting your server host production and ftp account
 
 ```bash
-<!-- Sample Configuration -->
+#Sample Configuration
 DEPLOY_HOST="103.31.xx.xx"
 DEPLOY_PORT="21"
 DEPLOY_PATH="/www/wwwroot/myproject/"
