@@ -1,26 +1,23 @@
 <?php
-/*
-     * Server Configuration
-     *'host' => "103.20.xx.xx",
-      'port' => "22", ( default )
-      'path' => "www/project-name/",
-      'username' => "root-user",
-      'password' => "root-pass",
-     */
 return [
-   'server' => [
-      'host'     => "",
-      'port'     => "22",
-      'path'     => "",
-      'username' => "",
-      'password' => "",
+   'server'=>[
+      'host'     => env("DEPLOY_HOST"),
+      'port'     => env("DEPLOY_PORT"),
+      'path'     => env("DEPLOY_PATH"),
+      'username' => env("DEPLOY_USER"),
+      'password' => env("DEPLOY_PASS"),
    ],
    'git-ftp'=>[
-      "url"       => "",
-      "user"      => "",
-      "password " => "",
+      "url"      => env("FTP_URL"),
+      "user"     => env("FTP_USER"),
+      "password" => env("FTP_PASS"),
    ],
-   'deploy' => [
-      "password" => ""
+   'deploy'=>[
+      "route_cache"      => true,
+      "config_cache"     => true,
+      "view_cache"       => true,
+      "maintenance_mode" => true,
+      "password"     => ""
    ]
 ];
+

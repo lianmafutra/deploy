@@ -191,6 +191,9 @@ class Deploy extends Command
                   $output = exec('git checkout master' . $previous_commit, $outputLines, $return);
                }
             }
+            if($choice == 'See Last Deploy'){
+               $this->error("Comming soon");
+            }
          }
       } else {
          $this->error("Wrong Password");
