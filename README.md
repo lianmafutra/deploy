@@ -15,10 +15,10 @@ composer require lianmafutra/deploy --dev
 ```bash
 php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider" --tag=deploy
 ```
-will be create file : app/Console/Commands/Deploy.php , app/Console/Commands/DeploySetup.php, config/deploy.php
+will be create file : ```app/Console/Commands/Deploy.php``` , ```app/Console/Commands/DeploySetup.php```, ```config/deploy.php```
 
 ## Package Configuration
-1. In your .env file, add the your SSH server host production and ftp account :
+1. In your .env file, add the your SSH server host production and FTP account :
 
 ```bash
 #Sample Configuration
