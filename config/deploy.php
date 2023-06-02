@@ -2,9 +2,9 @@
 return [
    'server'=>[
       'host'     => env('DEPLOY_HOST'),
-      'port'     => env('DEPLOY_PORT'),
+      'port'     => env('DEPLOY_PORT', 22),
       'path'     => env('DEPLOY_PATH'),
-      'username' => env('DEPLOY_USER'),
+      'username' => env('DEPLOY_USER', 'root'),
       'password' => env('DEPLOY_PASS'),
    ],
    'git-ftp'=>[
