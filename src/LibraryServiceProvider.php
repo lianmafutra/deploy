@@ -41,13 +41,6 @@ class LibraryServiceProvider extends ServiceProvider
       ], 'deploy');
 
 
-      try {
-         $append_config_env = File::append(".env",   PHP_EOL . PHP_EOL .
-            'DEPLOY_HOST=""' . PHP_EOL . 'DEPLOY_PORT=""' . PHP_EOL . 'DEPLOY_PATH=""' . PHP_EOL . 'DEPLOY_USER=""' . PHP_EOL . 'DEPLOY_PASS=""' . PHP_EOL . 'FTP_URL=""' . PHP_EOL . 'FTP_USER=""' . PHP_EOL . 'FTP_PASS=""');
-      } catch (\Throwable $th) {
-         
-      }
-
 
 
       $this
@@ -96,6 +89,15 @@ class LibraryServiceProvider extends ServiceProvider
       $this->publishes([
          self::CONSOLE_PATH2 => app_path('Console/Commands/DeploySetup.php'),
       ], 'deploy');
+
+      
+      try {
+         $append_config_env = File::append(".env",   PHP_EOL . PHP_EOL .
+            'DEPLOY_HOST=""' . PHP_EOL . 'DEPLOY_PORT=""' . PHP_EOL . 'DEPLOY_PATH=""' . PHP_EOL . 'DEPLOY_USER=""' . PHP_EOL . 'DEPLOY_PASS=""' . PHP_EOL . 'FTP_URL=""' . PHP_EOL . 'FTP_USER=""' . PHP_EOL . 'FTP_PASS=""');
+      } catch (\Throwable $th) {
+         
+      }
+
 
 
       return $this;
