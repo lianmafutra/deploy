@@ -55,7 +55,7 @@ php artisan deploy
 
 - [1] ``` Deploy Full ``` : Push New Commit file with GIT FTP and Auto run SSH server with command ```php artisan down```, ```php artisan optimize```, ```php artisan view:clear```, ```php artisan view:cache``` finally ```php artisan up```
 - [2] ``` Only Optimize ``` : No Push commit, only run optimize in production
-- [3] ``` Rollback Previous ``` : Rollback last commit in GIT locally and push to server production, you can fix in local and push again
+- [3] ``` Rollback Previous ``` : Rollback last commit in GIT locally and push to server production, you can fix in local with default branch and push again after fix
 
 ## Contributing
 
