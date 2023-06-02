@@ -53,9 +53,9 @@ php artisan deploy
 
 ![Screenshot_5](https://github.com/lianmafutra/deploy/assets/15800599/72493c7d-bc68-48c9-bf6a-6e8c1835f3c9)
 
-- [1] Deploy Full : Push New Commit file with GIT FTP, and Auto run command php artisan down, php artisan optimize, view:clear, view:cache finally php artisan up 
-- [2] Only Optimize : No Push commit, only run optimize 
-- [3] Rollback Previous : Rollback GIT locally and push to server , you can fix in local and push again
+- [1] #### Deploy Full : Push New Commit file with GIT FTP, and Auto run command php artisan down, php artisan optimize, view:clear, view:cache finally php artisan up 
+- [2] #### Only Optimize : No Push commit, only run optimize 
+- [3] #### Rollback Previous : Rollback GIT locally and push to server , you can fix in local and push again
 
 ## Contributing
 
