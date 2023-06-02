@@ -18,7 +18,7 @@ php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider
 will be create file : app/Console/Commands/Deploy.php , app/Console/Commands/DeploySetup.php, config/deploy.php
 
 ## Configuration
-1. open .env file and setting your server host production and ftp account
+1. open .env file and setting with your server host production and ftp account
 
 ```bash
 #Sample Configuration
