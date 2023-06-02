@@ -15,6 +15,7 @@ composer require lianmafutra/deploy --dev
 ```bash
 php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider" --tag=deploy
 ```
+will be create file : app/Console/Commands/Deploy.php , app/Console/Commands/DeploySetup.php, config/deploy.php
 3. 
 
 ## Contributing
