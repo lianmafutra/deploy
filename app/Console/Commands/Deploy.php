@@ -43,7 +43,6 @@ class Deploy extends Command
                1 =>    'Deploy Full',
                2 =>    'Only Optimize',
                3 =>    'Rollback Previous',
-               4 =>    'See Last Deploy',
             ],
          );
 
@@ -190,9 +189,6 @@ class Deploy extends Command
                   $this->line("<bg=blue;options=blink;>  Success deploy to production  </>\n");
                   $output = exec('git checkout master' . $previous_commit, $outputLines, $return);
                }
-            }
-            if($choice == 'See Last Deploy'){
-               $this->error("Comming soon");
             }
          }
       } else {
