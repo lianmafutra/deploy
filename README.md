@@ -3,6 +3,7 @@ A Simple Package for Deployment Laravel App with Git FTP Method, Easy Configurat
 
 Documentation is in progress ...
 
+## Installation
 Require this package with composer. It is recommended to only require the package for development.
 
 ```bash
