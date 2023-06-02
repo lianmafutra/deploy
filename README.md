@@ -16,7 +16,22 @@ composer require lianmafutra/deploy --dev
 php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider" --tag=deploy
 ```
 will be create file : app/Console/Commands/Deploy.php , app/Console/Commands/DeploySetup.php, config/deploy.php
-3. 
+
+## Configuration
+1. open .env file and setting your server host production and ftp account
+
+```bash
+<!-- Sample Configuration -->
+DEPLOY_HOST="103.31.xx.xx"
+DEPLOY_PORT="21"
+DEPLOY_PATH="/www/wwwroot/myproject/"
+DEPLOY_USER="root"
+DEPLOY_PASS=""
+
+FTP_URL="03.31.xx.xx"
+FTP_USER="ftp_user"
+FTP_PASS="ftp_pass"
+```
 
 ## Contributing
 
