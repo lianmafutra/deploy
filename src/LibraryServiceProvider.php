@@ -3,6 +3,7 @@
 namespace LianMafutra\Deploy;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 
 class LibraryServiceProvider extends ServiceProvider
@@ -23,7 +24,7 @@ class LibraryServiceProvider extends ServiceProvider
    {
 
 
-    
+
 
       if (function_exists('config_path')) { // function not available and 'publish' not relevant in Lumen
          $this->publishes([
@@ -33,18 +34,25 @@ class LibraryServiceProvider extends ServiceProvider
 
       $this->publishes([
          self::CONSOLE_PATH => app_path('Deploy.php'),
-     ], 'deploy');
+      ], 'deploy');
 
-     $this->publishes([
-      self::CONSOLE_PATH2 => app_path('DeploySetup.php'),
-  ], 'deploy');
-
-     
+      $this->publishes([
+         self::CONSOLE_PATH2 => app_path('DeploySetup.php'),
+      ], 'deploy');
 
 
-     $this
-     ->registerComponents()
-     ->registerComponentsPublishers();
+      try {
+         $append_config_env = File::append(".env",   PHP_EOL . PHP_EOL .
+            'DEPLOY_HOST=""' . PHP_EOL . 'DEPLOY_PORT=""' . PHP_EOL . 'DEPLOY_PATH=""' . PHP_EOL . 'DEPLOY_USER=""' . PHP_EOL . 'DEPLOY_PASS=""' . PHP_EOL . 'FTP_URL=""' . PHP_EOL . 'FTP_USER=""' . PHP_EOL . 'FTP_PASS=""');
+      } catch (\Throwable $th) {
+         
+      }
+
+
+
+      $this
+         ->registerComponents()
+         ->registerComponentsPublishers();
    }
 
    /**
@@ -83,11 +91,11 @@ class LibraryServiceProvider extends ServiceProvider
 
       $this->publishes([
          self::CONSOLE_PATH => app_path('Console/Commands/Deploy.php'),
-     ], 'deploy');
+      ], 'deploy');
 
-     $this->publishes([
-      self::CONSOLE_PATH2 => app_path('Console/Commands/DeploySetup.php'),
-  ], 'deploy');
+      $this->publishes([
+         self::CONSOLE_PATH2 => app_path('Console/Commands/DeploySetup.php'),
+      ], 'deploy');
 
 
       return $this;

@@ -30,14 +30,7 @@ class DeploySetup extends Command
    public function handle()
    {
 
-      try {
-         $append_config_env = File::append(".env",   PHP_EOL . PHP_EOL .
-            'DEPLOY_HOST=""' . PHP_EOL . 'DEPLOY_PORT=""' . PHP_EOL . 'DEPLOY_PATH=""' . PHP_EOL . 'DEPLOY_USER=""' . PHP_EOL . 'DEPLOY_PASS=""' . PHP_EOL . 'FTP_URL=""' . PHP_EOL . 'FTP_USER=""' . PHP_EOL . 'FTP_PASS=""');
-        
-      } catch (\Throwable $th) {
-         $this->line("<fg=red;>" . $th->getMessage() . "</>");
-      }
-
+   
       $ssh = new SSH2(config('deploy.server.host'), '22');
 
       $path_project = config('deploy.server.path');
