@@ -84,9 +84,10 @@ class DeploySetup extends Command
 
          $check = strpos($return, "fatal: bad object");
          if ($check) {
-            $this->line("Git ftp running in this project");
-         } else {
             $this->line("<bg=red> Git ftp not init this project");
+         
+         } else {
+            $this->line("Git ftp running in this project");
          }
       } catch (\Throwable $th) {
          //throw $th;
