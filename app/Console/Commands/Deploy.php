@@ -85,7 +85,7 @@ class Deploy extends Command
                   sleep(1.5);
 
                   $this->info("Running : Composer Install");
-                  $this->info($ssh->exec('cd ' . $path_project . ' && sudo composer install -o --no-interaction --no-dev'));
+                  $this->info($ssh->exec('cd ' . $path_project . ' && sudo composer install --prefer-dist --no-scripts -q -o'));
 
                   $this->info("Running : php artisan down");
                   $this->info($ssh->exec('cd ' . $path_project . ' && sudo php artisan down'));
