@@ -44,7 +44,7 @@ php artisan deploy:setup
 
 Setup is complete !
 
-3. you can custom command deploy in config/deploy.php , default command like this :
+3. you can custom command deploy in ```config/deploy.php``` , default command like this :
 
 ```
    'command-deploy' => [
