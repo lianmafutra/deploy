@@ -1,23 +1,30 @@
 <?php
 return [
-   'server'=>[
+   'server' => [
       'host'     => env('DEPLOY_HOST'),
       'port'     => env('DEPLOY_PORT', 22),
       'path'     => env('DEPLOY_PATH'),
       'username' => env('DEPLOY_USER', 'root'),
       'password' => env('DEPLOY_PASS'),
    ],
-   'git-ftp'=>[
+   'git-ftp' => [
       'url'      => env('FTP_URL'),
       'user'     => env('FTP_USER'),
       'password' => env('FTP_PASS'),
    ],
-   'deploy'=>[
-      'route_cache'      => true,
-      'config_cache'     => true,
-      'view_cache'       => true,
-      'maintenance_mode' => true,
-      'password'         => ''
+   'command-deploy' => [
+      'composer install --prefer-dist --no-scripts -q -o',
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
+   ],
+   'command-optimize' => [
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
    ]
 ];
-
