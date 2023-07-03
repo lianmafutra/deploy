@@ -36,7 +36,7 @@ FTP_URL="103.31.xx.xx"
 FTP_USER="ftp_user"
 FTP_PASS="ftp_pass"
 ```
-2. Run Command Setup:
+2. Run Command Setup, to test configuration :
 ```bash
 php artisan deploy:setup
 ```
