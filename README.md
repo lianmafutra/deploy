@@ -1,5 +1,5 @@
 # Laravel GIT-FTP
-A Simple Package for Deployment Laravel App with Git FTP server Method, Easy Configuration, Tagging Log Deploy, Rollback Deploy, CI/CD 
+A Simple Package for Deployment Laravel App with Git FTP server Method, Easy Configuration, Rollback Deploy, CI/CD 
 
 Documentation is in progress ...
 
