@@ -1,7 +1,5 @@
 # Laravel GIT-FTP
-A Simple Package for Deployment Laravel App with Git FTP server Method, Easy Configuration, Tagging Log Deploy, Rollback Deploy, CI/CD 
-
-Documentation is in progress ...
+A Simple Package for Deployment Laravel App with Git FTP server Method, Easy Configuration, Rollback Deploy, CI/CD 
 
 ![Screenshot_1](https://github.com/lianmafutra/deploy/assets/15800599/a11b75ff-9a10-4dfe-a80a-4bd11c489677)
 
@@ -17,7 +15,7 @@ composer require lianmafutra/deploy --dev
 ```
 2. First publish config and console command into your app directory', by running the following command:
 ```bash
-php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider" --tag=deploy
+php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider" --tag=deploy --force
 ```
 will be create file : ```app/Console/Commands/Deploy.php``` , ```app/Console/Commands/DeploySetup.php```, ```config/deploy.php```
 
@@ -36,14 +34,33 @@ FTP_URL="103.31.xx.xx"
 FTP_USER="ftp_user"
 FTP_PASS="ftp_pass"
 ```
-2. Run Command Setup:
+2. Run Command Setup, to test configuration :
 ```bash
 php artisan deploy:setup
 ```
-
 ![Screenshot_4](https://github.com/lianmafutra/deploy/assets/15800599/08895301-46ff-4a30-8fc2-df5c015bc5c0)
 
 Setup is complete !
+
+3. you can custom command deploy in ```config/deploy.php``` , default command like this :
+
+```
+   'command-deploy' => [
+      'composer install --prefer-dist --no-scripts -q -o',
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
+   ],
+   'command-optimize' => [
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
+   ]
+```
 
 ## Usage
 
