@@ -17,7 +17,7 @@ composer require lianmafutra/deploy --dev
 ```
 2. First publish config and console command into your app directory', by running the following command:
 ```bash
-php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider" --tag=deploy
+php artisan vendor:publish --provider="LianMafutra\Deploy\LibraryServiceProvider" --tag=deploy --force
 ```
 will be create file : ```app/Console/Commands/Deploy.php``` , ```app/Console/Commands/DeploySetup.php```, ```config/deploy.php```
 
