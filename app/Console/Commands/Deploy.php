@@ -28,10 +28,10 @@ class Deploy extends Command
       $choice = $this->choice(
          "Select Action ",
          [
-            4 => 'First Deploy',
-            1 => 'Deploy Push',
-            2 => 'Only Optimize',
-            3 => 'Rollback Previous',
+            1 => 'First Deploy',
+            2 => 'Deploy Push',
+            3 => 'Only Optimize',
+            4 => 'Rollback Previous',
          ],
       );
       if ($this->confirm('Are you sure you want to choose ' . $choice . '?', true)) {
