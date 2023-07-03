@@ -1,6 +1,8 @@
 # Laravel GIT-FTP
 A Simple Package for Deployment Laravel App with Git FTP server Method, Easy Configuration, Rollback Deploy, CI/CD 
 
+![Screenshot 2023-07-03 115658](https://github.com/lianmafutra/deploy/assets/15800599/ce362e8d-d9d6-47c1-b429-458002cab4d7)
+
 ![Screenshot_1](https://github.com/lianmafutra/deploy/assets/15800599/a11b75ff-9a10-4dfe-a80a-4bd11c489677)
 
 ## Requirement
@@ -45,6 +47,16 @@ Setup is complete !
 3. you can custom command deploy in ```config/deploy.php``` , default command like this :
 
 ```
+  'command-first-deploy' => [
+      'composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev',
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan migrate --force',
+      'php artisan auth:clear-resets',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
+   ],
    'command-deploy' => [
       'composer install --prefer-dist --no-scripts -q -o',
       'php artisan down',
@@ -72,11 +84,12 @@ php artisan deploy
 
 2. Terminal Show Option, Select option with type number :
 
-![Screenshot_5](https://github.com/lianmafutra/deploy/assets/15800599/72493c7d-bc68-48c9-bf6a-6e8c1835f3c9)
+![Screenshot 2023-07-03 115658](https://github.com/lianmafutra/deploy/assets/15800599/ce362e8d-d9d6-47c1-b429-458002cab4d7)
 
-- [1] ``` Deploy Full ``` : Push New Commit file with GIT FTP and Auto run SSH server with command ```php artisan down```, ```php artisan optimize```, ```php artisan view:clear```, ```php artisan view:cache``` finally ```php artisan up```
-- [2] ``` Only Optimize ``` : No Push commit, only run optimize in production
-- [3] ``` Rollback Previous ``` : Rollback last commit in GIT locally and push to server production, you can fix in local with default branch and push again after fix
+- [1] ``` First Deploy ``` : First Upload Project to server   
+- [2] ``` Deploy Push ``` : Push New Commit file with GIT FTP and Auto run SSH server with command ```php artisan down```, ```php artisan optimize```, ```php artisan view:clear```, ```php artisan view:cache``` finally ```php artisan up```
+- [3] ``` Only Optimize ``` : No Push commit, only run optimize in production
+- [4] ``` Rollback Previous ``` : Rollback last commit in GIT locally and push to server production, you can fix in local with default branch and push again after fix
 
 ## Contributing
 
