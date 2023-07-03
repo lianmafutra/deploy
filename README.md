@@ -84,7 +84,7 @@ php artisan deploy
 
 2. Terminal Show Option, Select option with type number :
 
-![Screenshot_5](https://github.com/lianmafutra/deploy/assets/15800599/72493c7d-bc68-48c9-bf6a-6e8c1835f3c9)
+![Screenshot 2023-07-03 115658](https://github.com/lianmafutra/deploy/assets/15800599/ce362e8d-d9d6-47c1-b429-458002cab4d7)
 
 - [1] ``` First Deploy ``` : First Upload Project to server   
 - [2] ``` Deploy Push ``` : Push New Commit file with GIT FTP and Auto run SSH server with command ```php artisan down```, ```php artisan optimize```, ```php artisan view:clear```, ```php artisan view:cache``` finally ```php artisan up```
