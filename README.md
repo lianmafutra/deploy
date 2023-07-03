@@ -39,11 +39,30 @@ FTP_PASS="ftp_pass"
 2. Run Command Setup:
 ```bash
 php artisan deploy:setup
-```
 
 ![Screenshot_4](https://github.com/lianmafutra/deploy/assets/15800599/08895301-46ff-4a30-8fc2-df5c015bc5c0)
 
 Setup is complete !
+```
+3. you can custom command deploy in config/deploy.php , default command like this :
+
+```
+   'command-deploy' => [
+      'composer install --prefer-dist --no-scripts -q -o',
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
+   ],
+   'command-optimize' => [
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
+   ]
+```
 
 ## Usage
 
