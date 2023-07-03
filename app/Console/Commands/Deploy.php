@@ -24,12 +24,14 @@ class Deploy extends Command
       if (!$ssh->login(config('deploy.server.username'), config('deploy.server.password'))) {
          throw new \Exception('Login failed');
       }
+     
       $choice = $this->choice(
          "Select Action ",
          [
-            1 =>    'Deploy Full',
-            2 =>    'Only Optimize',
-            3 =>    'Rollback Previous',
+            4 => 'First Deploy',
+            1 => 'Deploy Push',
+            2 => 'Only Optimize',
+            3 => 'Rollback Previous',
          ],
       );
       if ($this->confirm('Are you sure you want to choose ' . $choice . '?', true)) {
@@ -130,6 +132,14 @@ class Deploy extends Command
                sleep(2);
                $this->line("<bg=blue;options=blink;>  Success deploy to production  </>\n");
                $output = exec('git checkout master' . $previous_commit, $outputLines, $return);
+            }
+         }
+         if ($choice == 'First Deploy') {
+            $this->info(exec('git ftp init'));
+            $commandList = config('deploy.command-first-deploy');
+            foreach ($commandList as $key => $value) {
+               $this->info("Running : ".$value);
+               $this->info($ssh->exec('cd ' . $path_project . '&& echo "'.config('deploy.server.password').'" | sudo -S  ' . $value.' 2> /dev/null'));
             }
          }
       }

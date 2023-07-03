@@ -12,6 +12,16 @@ return [
       'user'     => env('FTP_USER'),
       'password' => env('FTP_PASS'),
    ],
+   'command-first-deploy' => [
+      'composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev',
+      'php artisan down',
+      'php artisan optimize',
+      'php artisan migrate --force',
+      'php artisan auth:clear-resets',
+      'php artisan view:clear',
+      'php artisan view:cache',
+      'php artisan up'
+   ],
    'command-deploy' => [
       'composer install --prefer-dist --no-scripts -q -o',
       'php artisan down',
