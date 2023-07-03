@@ -1,6 +1,8 @@
 # Laravel GIT-FTP
 A Simple Package for Deployment Laravel App with Git FTP server Method, Easy Configuration, Rollback Deploy, CI/CD 
 
+![Screenshot 2023-07-03 115658](https://github.com/lianmafutra/deploy/assets/15800599/ce362e8d-d9d6-47c1-b429-458002cab4d7)
+
 ![Screenshot_1](https://github.com/lianmafutra/deploy/assets/15800599/a11b75ff-9a10-4dfe-a80a-4bd11c489677)
 
 ## Requirement
