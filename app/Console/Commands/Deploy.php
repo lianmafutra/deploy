@@ -4,6 +4,7 @@ use Illuminate\Console\Command;
 use phpseclib3\Net\SSH2;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Process\Process;
 class Deploy extends Command
 {
    protected $signature = 'deploy';
@@ -35,40 +36,25 @@ class Deploy extends Command
          ],
       );
       if ($this->confirm('Are you sure you want to choose ' . $choice . '?', true)) {
-         if ($choice == 'Deploy Full') {
+         if ($choice == 'Deploy Push') {
             $this->info("Waiting to push ...");
             sleep(1.5);
             $this->output->progressStart(3);
-            for ($i = 0; $i < 3; $i++) {
-               sleep(0.5);
-               $this->output->progressAdvance();
-            }
-            $this->output->progressFinish();
-            $this->info("git ftp start ...");
-            $this->info("Runinng : git ftp push" . PHP_EOL);
-            // Command to execute
-            $command = 'git ftp push';
-            // Initialize progress bar
-            $output = new ConsoleOutput();
-            $progressBar = new ProgressBar($output);
-            // 
-            // Execute command and capture output
-            $output = exec($command, $outputLines, $return);
-            $progressBar->start(100);
-            foreach ($outputLines as $index => $result) {
-               if ($index == 0) {
-                  $this->line(PHP_EOL);
-               }
-               usleep(420);
-               $progressBar->advance();
-               $this->line("<fg=yellow;>" . $result . "</>");
-            }
-            if ($return != 0) {
-               $progressBar->finish();
+           
+            $this->info(PHP_EOL."git ftp start ...");
+            $this->info("Running : git ftp push" . PHP_EOL);
+            // Command to execute        
+            $process = Process::fromShellCommandline('git ftp push');
+
+            $process->setTimeout(null); 
+            $process->run(function ($type, $output) {
+               $this->output->write($output);
+            });
+
+            if (!$process->isSuccessful()) {
                $this->error(PHP_EOL . PHP_EOL . "git ftp push failed \n");
                return 1;
-            } else {
-               $progressBar->finish();
+           } else {
                $this->line(PHP_EOL . PHP_EOL . "<bg=green> git ftp success </>\n");
                sleep(1.5);
                $commandList = config('deploy.command-deploy');
@@ -100,28 +86,17 @@ class Deploy extends Command
             $this->info("git ftp start ...");
             $this->info("Running : git ftp push" . PHP_EOL);
             // Command to execute
-            $command = 'git ftp push';
-            // Initialize progress bar
-            $output = new ConsoleOutput();
-            $progressBar = new ProgressBar($output);
-            // 
-            // Execute command and capture output
-            $output = exec($command, $outputLines, $return);
-            $progressBar->start(100);
-            foreach ($outputLines as $index => $result) {
-               if ($index == 0) {
-                  $this->line(PHP_EOL);
-               }
-               usleep(420);
-               $progressBar->advance();
-               $this->line("<fg=yellow;>" . $result . "</>");
-            }
-            if ($return != 0) {
-               $progressBar->finish();
+             // Command to execute        
+             $process = Process::fromShellCommandline('git ftp push');
+
+             $process->setTimeout(null); 
+             $process->run(function ($type, $output) {
+                $this->output->write($output);
+             });
+             if (!$process->isSuccessful()) {
                $this->error(PHP_EOL . PHP_EOL . "git ftp push failed \n");
                return 1;
-            } else {
-               $progressBar->finish();
+           }  else {
                $this->line(PHP_EOL . PHP_EOL . "<bg=green> git ftp success </>\n");
                sleep(1.5);
                $commandList = config('deploy.command-optimize');
@@ -135,7 +110,13 @@ class Deploy extends Command
             }
          }
          if ($choice == 'First Deploy') {
-            $this->info(exec('git ftp init'));
+            $process = Process::fromShellCommandline('git ftp init');
+
+            $process->setTimeout(null); 
+            $process->run(function ($type, $output) {
+               $this->output->write($output);
+            });
+
             $commandList = config('deploy.command-first-deploy');
             foreach ($commandList as $key => $value) {
                $this->info("Running : ".$value);

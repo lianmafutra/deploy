@@ -14,6 +14,7 @@ return [
    ],
    'command-first-deploy' => [
       'composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev',
+      'php artisan key:generate',
       'php artisan down',
       'php artisan optimize',
       'php artisan migrate --force',
