@@ -86,7 +86,7 @@ php artisan deploy
 ![Screenshot 2023-07-03 115658](https://github.com/lianmafutra/deploy/assets/15800599/ce362e8d-d9d6-47c1-b429-458002cab4d7)
 
 - [1] ``` First Deploy ``` : First Upload Project to server   
-- [2] ``` Deploy Push ``` : Push New Commit file with GIT FTP and Auto run SSH server with command ```php artisan down```, ```php artisan optimize```, ```php artisan view:clear```, ```php artisan view:cache``` finally ```php artisan up```
+- [2] ``` Deploy Push ``` : Push New Commit file with GIT FTP and Auto run command through SSH server with command ```php artisan down```, ```php artisan optimize```, ```php artisan view:clear```, ```php artisan view:cache``` finally ```php artisan up```
 - [3] ``` Only Optimize ``` : No Push commit, only run optimize in production
 - [4] ``` Rollback Previous ``` : Rollback last commit in GIT locally and push to server production, you can fix in local with default branch and push again after fix
 
