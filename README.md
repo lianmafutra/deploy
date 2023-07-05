@@ -25,15 +25,15 @@ will be create file : ```app/Console/Commands/Deploy.php``` , ```app/Console/Com
 
 ```bash
 #Sample Configuration
-DEPLOY_HOST="103.31.xx.xx"
-DEPLOY_PORT="21"
+DEPLOY_HOST=103.31.xx.xx
+DEPLOY_PORT=22
 DEPLOY_PATH="/www/wwwroot/myproject/"
-DEPLOY_USER="root"
-DEPLOY_PASS="ssh_password"
+DEPLOY_USER=root
+DEPLOY_PASS=ssh_password
 
-FTP_URL="103.31.xx.xx"
-FTP_USER="ftp_user"
-FTP_PASS="ftp_pass"
+FTP_URL=103.31.xx.xx
+FTP_USER=ftp_user
+FTP_PASS=ftp_pass
 ```
 2. Run Command Setup, to test configuration :
 ```bash
