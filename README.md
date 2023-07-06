@@ -6,7 +6,7 @@ A Simple Package for Deployment Laravel App with Git FTP Server Method and SSH S
 ![Screenshot_1](https://github.com/lianmafutra/deploy/assets/15800599/a11b75ff-9a10-4dfe-a80a-4bd11c489677)
 
 ## Requirement
-Before using this package you must install and running GIT-FTP in your System https://github.com/git-ftp/git-ftp](https://github.com/git-ftp/git-ftp/blob/master/INSTALL.md
+Before using this package you must install and running GIT-FTP in your Local System https://github.com/git-ftp/git-ftp](https://github.com/git-ftp/git-ftp/blob/master/INSTALL.md
 
 ## Installation
 Require this package with composer. It is recommended to only require the package for development.
