@@ -50,6 +50,7 @@ Setup is complete !
       'composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev',
       'php artisan down',
       'php artisan optimize',
+      'php artisan storage:link',
       'php artisan migrate --force',
       'php artisan auth:clear-resets',
       'php artisan view:clear',
