@@ -90,6 +90,11 @@ php artisan deploy
 - [3] ``` Only Optimize ``` : No Push commit, only run optimize in production
 - [4] ``` Rollback Previous ``` : Rollback last commit in GIT locally and push to server production, you can fix in local with default branch and push again after fix
 
+## Note
+if you have error/failed to first git ftp init or first deploy, you must check this pull request git-ftp core error fix ( out of memory curl ), open git-ftp file and change it 
+like this pull request https://github.com/git-ftp/git-ftp/pull/638
+
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
